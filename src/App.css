@@ -1,0 +1,22 @@
+.app-container {
+  font-family: Arial, sans-serif;
+}
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border: 2px solid black;
+}
+.nav-links ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+.logo img {
+  width: 150px;
+  height: 150px;
+}
+.nav-links:hover {
+  cursor: pointer;
+}
