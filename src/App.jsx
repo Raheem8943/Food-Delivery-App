@@ -1,8 +1,8 @@
 import "./App.css";
-
+import Body from "./components/body";
 function App() {
-  return (
-    <div className="app-container">
+  const Header = () => {
+    return (
       <div className="Header">
         <div className="logo">
           <img
@@ -19,10 +19,17 @@ function App() {
           </ul>
         </div>
       </div>
-      <div className="productList"></div>
+    );
+  };
+
+  return (
+    <div className="app-container">
+      <Header />
+      <Body />
       <div className="footer"></div>
     </div>
   );
 }
 
 export default App;
+``;
