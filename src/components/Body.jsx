@@ -1652,10 +1652,7 @@ const Body = () => {
     setRestList(filterList);
   };
   const BtnChangeName = () => {
-    btnName === "Top Rated Restaurant"
-      ? setBtnName("Restaurant Above 4.5 Star")
-      : setBtnName("Top Rated Restaurant");
-    console.log(btnName);
+    setBtnName("Restaurant Above 4.5 Star");
   };
 
   return (
