@@ -1,7 +1,7 @@
+import { useState } from "react";
 import RestoCard from "./RestoCard";
-
 const Body = () => {
-  const restList = [
+  const [restList, setRestList] = useState([
     {
       info: {
         id: "9862",
@@ -1643,11 +1643,31 @@ const Body = () => {
         type: "WEBLINK",
       },
     },
-  ];
+  ]);
+  const [btnName, setBtnName] = useState("Top Rated Restaurant");
+
+  // filter Function
+  const topRatedRestaurants = () => {
+    const filterList = restList.filter((res) => res.info.avgRating > 4.5);
+    setRestList(filterList);
+  };
+  const BtnChangeName = () => {
+    btnName === "Top Rated Restaurant"
+      ? setBtnName("Restaurant Above 4.5 Star")
+      : setBtnName("Top Rated Restaurant");
+    console.log(btnName);
+  };
 
   return (
     <div className="body">
-      <div className="search"> Search</div>
+      <button
+        onClick={() => {
+          topRatedRestaurants();
+          BtnChangeName();
+        }}
+      >
+        {btnName}
+      </button>
       <div className="resto-container">
         {restList.map((restaurant) => (
           <RestoCard key={restaurant.info.id} resData={restaurant} />
