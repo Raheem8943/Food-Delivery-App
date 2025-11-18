@@ -15,7 +15,9 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
-    setRestList();
+    setRestList(
+      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   // filter Function
