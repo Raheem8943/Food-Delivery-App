@@ -33,7 +33,11 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="btn-container">
+      <div className="filter-container">
+        <div className="search-container">
+          <input type="text" className="search-box" />
+          <button>Search</button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {

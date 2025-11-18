@@ -18,8 +18,14 @@
 .res-logo {
   width: 100%;
 }
-.btn-container {
+.filter-container {
+  display: flex;
+  gap: 25px;
   padding: 10px 10px;
+}
+.search-container {
+  display: flex;
+  gap: 5px;
 }
 .filter-btn {
   cursor: pointer;
