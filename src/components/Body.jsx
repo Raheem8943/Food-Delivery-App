@@ -1,21 +1,33 @@
 import { useEffect, useState } from "react";
 import RestoCard from "./RestoCard";
 const Body = () => {
+  // useState Variables
   const [restList, setRestList] = useState([]); //useState for filter
   const [btnName, setBtnName] = useState("Top Rated Restaurant"); //useState for filter button
+  const [searchText, setSearchText] = useState(""); //useState for search
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
+  console.log("body rendered");
   //useEffect
   useEffect(() => {
     fetchData();
   }, []);
 
+  // Data Fetching
   const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
+
+    //convert data in to json format
     const json = await data.json();
     console.log(json);
+
+    // taking specific  data from API
     setRestList(
+      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurants(
       json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -34,10 +46,32 @@ const Body = () => {
   return (
     <div className="body">
       <div className="filter-container">
+        {/* search button */}
+
         <div className="search-container">
-          <input type="text" className="search-box" />
-          <button>Search</button>
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+
+          <button
+            onClick={() => {
+              console.log(searchText);
+              const filteredRestaurants = restList.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setFilteredRestaurants(filteredRestaurants);
+            }}
+          >
+            Search
+          </button>
         </div>
+
+        {/* filter button */}
         <button
           className="filter-btn"
           onClick={() => {
@@ -50,7 +84,7 @@ const Body = () => {
       </div>
 
       <div className="resto-container">
-        {restList.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <RestoCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>

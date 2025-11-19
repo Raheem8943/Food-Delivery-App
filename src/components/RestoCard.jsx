@@ -1,5 +1,4 @@
 const RestoCard = ({ resData }) => {
-  console.log("rest", resData);
   const { name, cuisines, avgRating, deliveryTime, cloudinaryImageId } =
     resData.info;
 
