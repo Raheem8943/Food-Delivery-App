@@ -10,6 +10,13 @@
   font-weight: bolder;
   color: white;
 }
+.Header a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.Header a:hover {
+  color: rgb(255, 255, 255);
+}
 .nav-links ul {
   display: flex;
   gap: 20px;
