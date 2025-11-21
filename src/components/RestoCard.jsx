@@ -1,3 +1,4 @@
+import { IMG_URL } from "../../Constants";
 const RestoCard = ({ resData }) => {
   const { name, cuisines, avgRating, deliveryTime, cloudinaryImageId } =
     resData.info;
@@ -6,7 +7,7 @@ const RestoCard = ({ resData }) => {
     <div className="res-card">
       <img
         className="res-logo"
-        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
+        src={IMG_URL + cloudinaryImageId}
         alt="res-logo"
       />
       <h3>{name}</h3>

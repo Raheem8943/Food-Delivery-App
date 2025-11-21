@@ -1,13 +1,12 @@
+import { LOGO_IMG } from "../../Constants";
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="Header">
       <div className="logo">
-        <img
-          src="https://media.istockphoto.com/id/1435983029/vector/food-delivery-logo-images.jpg?s=612x612&w=0&k=20&c=HXPxcjOxUiW4pMW1u9E0k2dJYQOU37a_0qZAy3so8fY="
-          alt=""
-        />
+        <img src={LOGO_IMG} alt="" />
       </div>
+      <div className="App_name">Food Asia</div>
       <div className="nav-links">
         <ul>
           <li>

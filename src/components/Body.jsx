@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import RestoCard from "./RestoCard";
+import { CDN_URL } from "../../Constants";
 const Body = () => {
   // useState Variables
   const [restList, setRestList] = useState([]); //useState for filter
@@ -15,9 +16,7 @@ const Body = () => {
 
   // Data Fetching
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(CDN_URL);
 
     //convert data in to json format
     const json = await data.json();
