@@ -18,10 +18,10 @@
 }
 .Header a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 .Header a:hover {
-  color: rgb(255, 255, 255);
+  color: orangered;
 }
 .nav-links ul {
   display: flex;
@@ -34,4 +34,57 @@
 }
 .nav-links:hover {
   cursor: pointer;
+}
+
+/* CSS for Error */
+/* Error.css */
+.error-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8f9fa;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.error-container h1 {
+  font-size: 3rem;
+  margin: 0.3em 0;
+  color: #d9534f; /* red accent */
+}
+
+.error-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+  color: #555;
+}
+
+.error-container .status {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d9534f; /* blue accent */
+}
+
+.error-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 30px;
+  border: 1px solid black;
+  font-weight: bolder;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.error-btn:hover {
+  background: #025aa5;
+}
+.error-btn a {
+  text-decoration: none;
+  color: #5bc0de;
 }
