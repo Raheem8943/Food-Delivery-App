@@ -14,9 +14,16 @@ const Body = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const filteredRestaurants = restList.filter((res) =>
+      res.info.name.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFilteredRestaurants(filteredRestaurants);
+  }, [searchText, restList]);
+
   // Data Fetching
   const fetchData = async () => {
-    const data = await fetch(CDN_URL);
+    const data = await fetch("https://foodfire.onrender.com/api/restaurants");
 
     //convert data in to json format
     const json = await data.json();
@@ -57,17 +64,7 @@ const Body = () => {
             }}
           />
 
-          <button
-            onClick={() => {
-              console.log(searchText);
-              const filteredRestaurants = restList.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
-              );
-              setFilteredRestaurants(filteredRestaurants);
-            }}
-          >
-            Search
-          </button>
+          <button>Search</button>
         </div>
 
         {/* filter button */}
