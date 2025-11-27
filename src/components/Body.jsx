@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import RestoCard from "./RestoCard";
 import { CDN_URL } from "../../Constants";
 const Body = () => {
@@ -23,7 +24,7 @@ const Body = () => {
 
   // Data Fetching
   const fetchData = async () => {
-    const data = await fetch("https://foodfire.onrender.com/api/restaurants");
+    const data = await fetch(CDN_URL);
 
     //convert data in to json format
     const json = await data.json();
@@ -81,7 +82,12 @@ const Body = () => {
 
       <div className="resto-container">
         {filteredRestaurants.map((restaurant) => (
-          <RestoCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            to={"/restaurants/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            <RestoCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
