@@ -42,25 +42,34 @@
 }
 
 /* Menu Card css */
+/* Center the card */
 .menu-res-info {
   display: flex;
   justify-content: center;
-  padding: 10px 10px;
+  padding: 20px;
 }
+
+/* Fixed-size restaurant card */
 .menu-res-container {
   display: flex;
-  background-color: bisque;
-  gap: 20px;
+  justify-content: space-between; /* name on left, image on right */
   align-items: center;
-  padding: 10px 30px;
+  width: 1500px; /* FIXED SIZE */
+  min-height: 250px;
+  padding: 20px 30px;
+  background: bisque;
   border-radius: 15px;
+  gap: 20px;
 }
 .menu-res-img-container img {
-  height: 250px;
-  width: 300px;
+  height: 200px;
+  width: 250px;
   border-radius: 10px;
 }
 .menu-res-avgRating {
   color: rgb(52, 218, 52);
   font-weight: bolder;
+}
+.menu-res-container:hover {
+  cursor: default;
 }
