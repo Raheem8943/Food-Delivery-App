@@ -1,7 +1,7 @@
-import { IMG_URL } from "../../Constants";
+import { IMG_URL } from "../utiles/Constants";
+
 const RestoCard = ({ resData }) => {
-  const { name, cuisines, avgRating, deliveryTime, cloudinaryImageId } =
-    resData.info;
+  const { name, cuisines, avgRating, cloudinaryImageId } = resData.info;
 
   return (
     <div className="res-card">
@@ -12,8 +12,11 @@ const RestoCard = ({ resData }) => {
       />
       <h3>{name}</h3>
       <h4>{cuisines.join(" , ")}</h4>
-      <h4>{avgRating}</h4>
-      <h4>{deliveryTime}</h4>
+      <p className="res_card-avg_rating">
+        {" "}
+        <i className="bi bi-star-fill"> </i>
+        {avgRating}
+      </p>
     </div>
   );
 };

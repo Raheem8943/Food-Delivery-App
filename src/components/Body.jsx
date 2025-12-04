@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RestoCard from "./RestoCard";
-import { CDN_URL } from "../../Constants";
+import { CDN_URL } from "../utiles/Constants";
 const Body = () => {
   // useState Variables
   const [restList, setRestList] = useState([]); //useState for filter
@@ -83,6 +83,7 @@ const Body = () => {
       <div className="resto-container">
         {filteredRestaurants.map((restaurant) => (
           <Link
+            className="card-link"
             to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
           >

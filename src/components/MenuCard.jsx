@@ -1,4 +1,5 @@
-import { IMG_URL } from "../../Constants";
+import { IMG_URL } from "../utiles/Constants";
+
 const MenuCard = ({ resinfo }) => {
   const { name, cuisines, cloudinaryImageId, avgRating } = resinfo;
   return (

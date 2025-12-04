@@ -9,6 +9,10 @@
   background-color: bisque;
   cursor: pointer;
 }
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
 .resto-container {
   display: flex;
   flex-wrap: wrap;
@@ -35,7 +39,10 @@
 .res-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.res_card-avg_rating {
+  color: rgb(52, 218, 52);
+  font-weight: bolder;
+}
 .res-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);

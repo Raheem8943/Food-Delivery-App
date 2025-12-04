@@ -1,5 +1,5 @@
-import { LOGO_IMG } from "../../Constants";
 import { Link } from "react-router-dom";
+import { LOGO_IMG } from "../utiles/Constants";
 const Header = () => {
   return (
     <div className="Header">
