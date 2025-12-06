@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { LOGO_IMG } from "../utiles/Constants";
 const Header = () => {
   return (
-    <div className="flex justify-between bg-pink-800 h-[180px] ">
+    <div className="flex justify-between bg-[#923743] h-[180px] ">
       <div className="w-35 justify-center pt-2.5 pl-2 m-3">
         <img src={LOGO_IMG} alt="" />
       </div>
-      <div className="flex items-center text-orange-500 text-6xl font-san font-bold">
+      <div className="flex items-center text-[#FF4500] text-6xl font-san font-bold">
         Food Asia
       </div>
       <div className="flex items-center">

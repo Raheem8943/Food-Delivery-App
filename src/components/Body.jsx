@@ -65,14 +65,14 @@ const Body = () => {
             }}
           />
 
-          <button className="px-4 mx-2 bg-orange-500 text-white border border-solid border-gray-400 rounded-sm ">
+          <button className="px-4 mx-2 bg-[#923743] text-white border border-solid border-gray-400 rounded-sm ">
             Search
           </button>
         </div>
         {/* filter button */}
         <div className="flex items-center">
           <button
-            className="px-4 mx-2 bg-orange-500 text-white border border-solid border-gray-400 rounded-sm "
+            className="px-4 mx-2 bg-[#923743] text-white border border-solid border-gray-400 rounded-sm "
             onClick={() => {
               topRatedRestaurants(); //calling function
               BtnChangeName(); //calling function
