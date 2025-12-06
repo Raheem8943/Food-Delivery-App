@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 import { LOGO_IMG } from "../utiles/Constants";
 const Header = () => {
   return (
-    <div className="Header">
-      <div className="logo">
+    <div className="flex justify-between bg-pink-800 h-[180px] ">
+      <div className="w-35 justify-center pt-2.5 pl-2 m-3">
         <img src={LOGO_IMG} alt="" />
       </div>
-      <div className="App_name">Food Asia</div>
-      <div className="nav-links">
-        <ul>
+      <div className="flex items-center text-orange-500 text-6xl font-san font-bold">
+        Food Asia
+      </div>
+      <div className="flex items-center">
+        <ul className="flex p-5 m-4 gap-4 text-white text-2xl font-bold text-[18px]">
           <li>
             <Link to={"/"}>Home</Link>
           </li>

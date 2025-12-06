@@ -1,4 +1,6 @@
-.app-container {
+@import "tailwindcss";
+
+/* .app-container { 
   font-family: Arial, sans-serif;
 }
 .Header {
@@ -38,7 +40,7 @@
 
 /* CSS for Error */
 /* Error.css */
-.error-container {
+/* .error-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -55,21 +57,21 @@
   font-size: 3rem;
   margin: 0.3em 0;
   color: #d9534f; /* red accent */
-}
+/* } */
 
-.error-container h2 {
+/* .error-container h2 {
   font-size: 1.5rem;
   margin-bottom: 1em;
   color: #555;
-}
+} */
 
-.error-container .status {
+/* .error-container .status {
   font-size: 2rem;
   font-weight: bold;
   color: #d9534f; /* blue accent */
-}
+/* } */
 
-.error-btn {
+/* .error-btn {
   margin-top: 20px;
   padding: 12px 24px;
   font-size: 30px;
@@ -88,3 +90,4 @@
   text-decoration: none;
   color: #5bc0de;
 }
+*/
