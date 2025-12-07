@@ -11,19 +11,17 @@ const Body = () => {
   // using custom hook
   const [restList, filteredRestaurants, setFilteredRestaurants] = useRestList();
 
-  console.log("restList:", restList);
-
-  //
+  // search useEffect
   useEffect(() => {
     const filteredRestaurants = restList.filter((res) =>
-      res.info.name.toLowerCase().includes(searchText.toLowerCase())
+      res?.info?.name?.toLowerCase().includes(searchText.toLowerCase())
     );
     setFilteredRestaurants(filteredRestaurants);
   }, [searchText, restList]);
 
   // filter Function
   const topRatedRestaurants = () => {
-    const filterList = restList.filter((res) => res.info.avgRating > 4.5);
+    const filterList = restList.filter((res) => res?.info?.avgRating > 4.5);
     setFilteredRestaurants(filterList);
   };
 

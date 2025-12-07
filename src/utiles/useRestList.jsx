@@ -13,7 +13,6 @@ const useRestList = () => {
     const data = await fetch(CDN_URL);
     //convert data in to json format
     const json = await data.json();
-    console.log(json);
 
     // taking specific  data from API
     setRestList(
