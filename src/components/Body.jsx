@@ -1,43 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RestoCard from "./RestoCard";
-import { CDN_URL } from "../utiles/Constants";
+import useRestList from "../utiles/useRestList";
+import Shimmer from "./Shimmer";
 const Body = () => {
   // useState Variables
-  const [restList, setRestList] = useState([]); //useState for filter
   const [btnName, setBtnName] = useState("Top Rated Restaurant"); //useState for filter button
   const [searchText, setSearchText] = useState(""); //useState for search
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-  console.log("body rendered");
-  //useEffect
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // using custom hook
+  const [restList, filteredRestaurants, setFilteredRestaurants] = useRestList();
 
+  console.log("restList:", restList);
+
+  //
   useEffect(() => {
     const filteredRestaurants = restList.filter((res) =>
       res.info.name.toLowerCase().includes(searchText.toLowerCase())
     );
     setFilteredRestaurants(filteredRestaurants);
   }, [searchText, restList]);
-
-  // Data Fetching
-  const fetchData = async () => {
-    const data = await fetch(CDN_URL);
-
-    //convert data in to json format
-    const json = await data.json();
-    console.log(json);
-
-    // taking specific  data from API
-    setRestList(
-      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurants(
-      json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
 
   // filter Function
   const topRatedRestaurants = () => {
@@ -49,7 +31,7 @@ const Body = () => {
   const BtnChangeName = () => {
     setBtnName("Restaurant Above 4.5 Star");
   };
-
+  if (!restList.length) return <Shimmer />;
   return (
     <div className="body">
       <div className="filter-container flex gap-10">
