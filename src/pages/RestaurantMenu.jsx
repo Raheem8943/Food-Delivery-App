@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom";
 import RestaurantMenuCategory from "../components/RestaurantMenuCategory";
 import { IMG_URL } from "../utiles/Constants";
 import ShimmerMenu from "../components/ShimmerMenu";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
+  const [showIndex, setShowIndex] = useState(null);
 
   const resInfo = useRestaurantMenu(resId);
 
@@ -47,10 +49,14 @@ const RestaurantMenu = () => {
         </div>
       </div>
       <div className="menu category p-2 m-2">
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <RestaurantMenuCategory
             key={category?.card?.card?.categoryId}
             category={category?.card?.card}
+            showItem={index === showIndex ? true : false}
+            setShowIndex={() =>
+              setShowIndex(showIndex === index ? null : index)
+            }
           />
         ))}
       </div>

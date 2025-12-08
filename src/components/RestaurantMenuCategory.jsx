@@ -1,12 +1,8 @@
-import { useState } from "react";
-
 import ItemList from "./ItemList";
 
-const RestaurantMenuCategory = ({ category }) => {
-  const [showItem, setShowItem] = useState(false);
+const RestaurantMenuCategory = ({ category, showItem, setShowIndex }) => {
   const categoryClick = () => {
-    console.log("clicked");
-    setShowItem(!showItem);
+    setShowIndex();
   };
   return (
     <div className="restaurant_details-menu_container w-6/12 m-auto cursor-pointer ">
