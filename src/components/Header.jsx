@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { LOGO_IMG } from "../utiles/Constants";
+import { useState } from "react";
 const Header = () => {
+  const [logBtn, setLogbtn] = useState("Login");
   return (
     <div className="flex justify-between bg-[#923743] h-[180px] ">
       <div className="w-35 justify-center pt-2.5 pl-2 m-3">
@@ -26,6 +28,14 @@ const Header = () => {
             {" "}
             <Link to={"/cart"}>Cart</Link>
           </li>
+          <button
+            className="text-white font-bold px-4 w-24 text-[18px] mr-3"
+            onClick={() => {
+              logBtn === "Login" ? setLogbtn("Logout") : setLogbtn("Login");
+            }}
+          >
+            {logBtn}
+          </button>
         </ul>
       </div>
     </div>
