@@ -7,9 +7,11 @@ const Header = () => {
   const [logBtn, setLogbtn] = useState("Login");
   return (
     <div className="flex justify-between bg-[#923743] h-[180px] sticky top-0 z-50 shadow-lg">
-      <div className="w-35 justify-center pt-2.5 pl-2 m-3">
-        <img src={LOGO_IMG} alt="" />
-      </div>
+      <Link to="/">
+        <div className="w-35 justify-center pt-2.5 pl-2 m-3">
+          <img src={LOGO_IMG} alt="" />
+        </div>
+      </Link>
       <div className="flex items-center text-[#FF4500] text-6xl font-san font-bold">
         Food Asia
       </div>
