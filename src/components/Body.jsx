@@ -28,14 +28,15 @@ const Body = () => {
         <div className="m-2 p-3 flex justify-center items-center gap-2 w-full">
           <input
             type="text"
-            className=" border border-gray-400 px-5 py-1 rounded-xl w-full max-w-[600px]"
+            className=" border border-gray-400 px-5 py-1 rounded-xl w-full max-w-[600px] focus:outline-none"
             value={searchText}
+            placeholder="Search Restaurant"
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
 
-          <button className="px-4 py-1 bg-[#5333ed] text-white border rounded-xl ">
+          <button className="px-4 py-1 bg-[#5333ed] text-white border rounded-xl cursor-pointer">
             <i class="bi bi-search"></i>
           </button>
         </div>
