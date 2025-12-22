@@ -5,7 +5,7 @@ import useRestList from "../utiles/useRestList";
 import Shimmer from "./Shimmer";
 const Body = () => {
   // useState Variables
-  const [btnName, setBtnName] = useState("Top Rated Restaurant"); //useState for filter button
+
   const [searchText, setSearchText] = useState(""); //useState for search
 
   // using custom hook
@@ -19,51 +19,29 @@ const Body = () => {
     setFilteredRestaurants(filteredRestaurants);
   }, [searchText, restList]);
 
-  // filter Function
-  const topRatedRestaurants = () => {
-    const filterList = restList.filter((res) => res?.info?.avgRating > 4.5);
-    setFilteredRestaurants(filterList);
-  };
-
-  // filter button function
-  const BtnChangeName = () => {
-    setBtnName("Restaurant Above 4.5 Star");
-  };
   if (!restList.length) return <Shimmer />;
   return (
     <div className="body">
       <div className="filter-container flex gap-10">
         {/* search button */}
 
-        <div className="m-2 p-3 ">
+        <div className="m-2 p-3 flex justify-center items-center gap-2 w-full">
           <input
             type="text"
-            className=" border border-solid border-gray-400 px-5 rounded-sm"
+            className=" border border-gray-400 px-5 py-1 rounded-xl w-full max-w-[600px]"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
 
-          <button className="px-4 mx-2 bg-[#923743] text-white border border-solid border-gray-400 rounded-sm ">
+          <button className="px-4 py-1 bg-[#5333ed] text-white border rounded-xl ">
             Search
-          </button>
-        </div>
-        {/* filter button */}
-        <div className="flex items-center">
-          <button
-            className="px-4 mx-2 bg-[#923743] text-white border border-solid border-gray-400 rounded-sm "
-            onClick={() => {
-              topRatedRestaurants(); //calling function
-              BtnChangeName(); //calling function
-            }}
-          >
-            {btnName}
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-7 m-4 p-4 gap-3 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 m-4 p-4 gap-3 ">
         {filteredRestaurants.map((restaurant) => (
           <Link
             className="card-link"

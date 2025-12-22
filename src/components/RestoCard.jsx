@@ -4,7 +4,7 @@ const RestoCard = ({ resData }) => {
   const { name, cuisines, avgRating, cloudinaryImageId } = resData.info;
 
   return (
-    <div className="p-2 m-2 w-[235px] h-[450px] bg-[#FFE4C4] rounded-[5px] flex-col gap-3 ">
+    <div className="p-2 m-2 w-full max-w-[235px] h-[450px] bg-gray-100 rounded-[5px] flex flex-col gap-3 ">
       <img
         className="h-[180px] w-full rounded-[5px] object-cover"
         src={IMG_URL + cloudinaryImageId}

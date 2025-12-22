@@ -28,7 +28,7 @@ const RestaurantMenu = () => {
 
   return (
     <div className="menu-container p-2 m-2">
-      <div className="menu-res-container flex justify-between w-6/12 px-2  bg-[#FFE4C4] items-center m-auto rounded-2xl cursor-default">
+      <div className="menu-res-container flex justify-between w-6/12 px-2  bg-gray-100 items-center m-auto rounded-2xl cursor-default">
         <div className="res-name&cusine p-2 m-2">
           {" "}
           <h1 className="font-bold text-[22px]">{name}</h1>
