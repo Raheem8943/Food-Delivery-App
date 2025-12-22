@@ -4,7 +4,7 @@ const Shimmer = () => {
       {/* Search bar shimmer */}
       <div className="flex justify-center my-4 gap-2">
         <div className="h-8 w-full max-w-[600px] bg-gray-300 rounded-xl"></div>
-        <div className="h-8 w-20 bg-gray-300 rounded-xl"></div>
+        <div className="h-8 w-13 bg-gray-300 rounded-xl"></div>
       </div>
 
       {/* Card shimmer grid */}

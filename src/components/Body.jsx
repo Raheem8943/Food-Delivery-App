@@ -36,7 +36,7 @@ const Body = () => {
           />
 
           <button className="px-4 py-1 bg-[#5333ed] text-white border rounded-xl ">
-            Search
+            <i class="bi bi-search"></i>
           </button>
         </div>
       </div>

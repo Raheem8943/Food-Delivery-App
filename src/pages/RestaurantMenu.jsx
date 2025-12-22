@@ -28,12 +28,12 @@ const RestaurantMenu = () => {
 
   return (
     <div className="menu-container p-2 m-2">
-      <div className="menu-res-container flex justify-between w-6/12 px-2  bg-gray-100 items-center m-auto rounded-2xl cursor-default">
+      <div className="menu-res-container flex justify-between w-6/12 px-2  bg-gray-100 items-center m-auto rounded-2xl cursor-default shadow-lg">
         <div className="res-name&cusine p-2 m-2">
           {" "}
           <h1 className="font-bold text-[22px]">{name}</h1>
           <p className="menu-res-cusines pt-2">{cuisines.join(",")}</p>
-          <p className="menu-res-avgRating text-green-500">
+          <p className="menu-res-avgRating text-green-400 font-bold">
             <i className="bi bi-star-fill"> </i> {avgRating}
           </p>
         </div>
