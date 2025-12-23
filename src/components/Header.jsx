@@ -51,15 +51,16 @@ const Header = () => {
         <NavLink
           to={"/cart"}
           className={({ isActive }) =>
-            `flex items-center justify-center mr-7 ${
-              isActive ? "text-emerald-300" : "text-white"
+            `flex items-center justify-center mr-7 ${isActive ? "text-cyan-300" : "text-white"
             }`
           }
         >
           <i className="bi bi-bag-fill text-3xl leading-none "></i>
-          <div className="absolute ml-6 mb-1 text-xs bg-red-500 rounded-full px-1 text-white">
-            {CartItem.length}
-          </div>
+          {CartItem.length > 0 && (
+            <div className="absolute ml-6 mb-1 text-xs bg-red-500 rounded-full px-1 text-white">
+              {CartItem.length}
+            </div>
+          )}
         </NavLink>
       </div>
     </div>
