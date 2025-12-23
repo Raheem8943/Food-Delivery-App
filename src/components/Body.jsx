@@ -28,7 +28,7 @@ const Body = () => {
         <div className="m-2 p-3 flex justify-center items-center gap-2 w-full">
           <input
             type="text"
-            className=" border border-gray-400 px-5 py-1 rounded-xl w-full max-w-[600px] focus:outline-none"
+            className=" border border-gray-400 px-5 py-1 rounded-xl w-full max-w-[600px] focus:outline-none bg-white text-black caret-black"
             value={searchText}
             placeholder="Search Restaurant"
             onChange={(e) => {
