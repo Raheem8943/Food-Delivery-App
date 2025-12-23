@@ -11,7 +11,7 @@ const Body = () => {
   // using custom hook
   const [restList, filteredRestaurants, setFilteredRestaurants] = useRestList();
 
-  // search useEffect
+  // useEffect for search 
   useEffect(() => {
     const filteredRestaurants = restList.filter((res) =>
       res?.info?.name?.toLowerCase().includes(searchText.toLowerCase())
@@ -37,7 +37,7 @@ const Body = () => {
           />
 
           <button className="px-4 py-1 bg-[#5333ed] text-white border rounded-xl cursor-pointer">
-            <i class="bi bi-search"></i>
+            <i className="bi bi-search"></i>
           </button>
         </div>
       </div>

@@ -6,15 +6,15 @@ const Header = () => {
   const CartItem = useSelector((store) => store.cart.item);
 
   return (
-    <div className="flex justify-between bg-[#5333ed] h-[100px] sticky top-0 z-50 shadow-lg ">
+    <div className="flex justify-between bg-[#5333ed] h-[100px] sticky top-0 z-50 shadow-lg relative">
       <NavLink to="/">
         <div className="flex items-center gap-2 pl-4 mt-3">
           <img src={LOGO_IMG} alt="logo" className="w-16 h-16 bg-white" />
           <p className="text-white text-4xl science-gothic">Food Asia</p>
         </div>
       </NavLink>
-      <div className="flex items-center">
-        <ul className="flex items-center p-5 m-4 gap-4 font-bold text-[18px]">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <ul className="flex items-center gap-8 font-bold text-[18px]">
           <li>
             <NavLink
               to={"/"}
