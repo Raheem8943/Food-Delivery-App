@@ -27,18 +27,18 @@ const ItemList = ({ item }) => {
             </h3>
           </div>
 
-          <div className="item-img p-2 m-2 w-3/12 object-fill ">
-            <button
-              onClick={() => handleAdditem(item)}
-              className="bg-white text-green-500 font-bold p-3 m-3  w-3/60 absolute mt-23 rounded-[5px] ml-13 shadow-lg cursor-pointer hover:bg-gray-200"
-            >
-              ADD
-            </button>
+          <div className="item-img p-2 m-2 w-3/12 object-fill relative">
             <img
               className="w-[140px] h-[120px] object-cover rounded-lg mx-auto"
               src={IMG_URL + item?.card?.info?.imageId}
               alt=""
             />
+            <button
+              onClick={() => handleAdditem(item)}
+              className="absolute bottom-[-10px] left-1/2 -translate-x-1/2 bg-white text-green-600 font-extrabold py-2 px-6 shadow-lg rounded-lg hover:bg-gray-200 transition-all duration-200 ease-in-out border border-gray-100"
+            >
+              ADD
+            </button>
           </div>
         </div>
       ))}
@@ -46,3 +46,4 @@ const ItemList = ({ item }) => {
   );
 };
 export default ItemList;
+
