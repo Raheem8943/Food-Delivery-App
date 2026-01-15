@@ -6,7 +6,7 @@ const Header = () => {
   const CartItem = useSelector((store) => store.cart.item);
 
   return (
-    <div className="flex justify-between bg-[#5333ed] h-[100px] sticky top-0 z-50 shadow-lg relative">
+    <div className="flex justify-between bg-[#5333ed] h-[100px]  sticky top-0 z-50 shadow-lg ">
       <NavLink to="/">
         <div className="flex items-center gap-2 pl-4 mt-3">
           <img src={LOGO_IMG} alt="logo" className="w-16 h-16 bg-white" />
@@ -51,7 +51,8 @@ const Header = () => {
         <NavLink
           to={"/cart"}
           className={({ isActive }) =>
-            `flex items-center justify-center mr-7 ${isActive ? "text-cyan-300" : "text-white"
+            `flex items-center justify-center mr-7 ${
+              isActive ? "text-cyan-300" : "text-white"
             }`
           }
         >
