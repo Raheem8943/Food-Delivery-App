@@ -1,16 +1,55 @@
-# React + Vite
+# 🍕 Food Asia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Craving something good? Browse restaurants, check out menus, and fill up your cart! A sleek food delivery app built with React that works on everything from your phone to your laptop.
 
-Currently, two official plugins are available:
+## What's in here?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Browse Restaurants** - Scroll through available restaurants and search by name
+- **View Menus** - Check out restaurant menus with expandable categories
+- **Shopping Cart** - Add, remove, or clear items easily
+- **Live Search** - Find restaurants instantly as you type
+- **Responsive Design** - Works perfectly on phones, tablets, and desktops with Tailwind CSS
 
-## React Compiler
+## Tech Used
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- React 19.1
+- Redux Toolkit (for state management)
+- React Router (for navigation)
+- Tailwind CSS (for styling)
+- Vite (for building)
 
-## Expanding the ESLint configuration
+### Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **ESLint** - Code linting
+- **Bootstrap Icons** - UI icons
+- **Vite** - Module bundling
+
+## Project Structure
+
+```
+src/
+├── components/    # All the React components
+├── pages/         # Full page components
+├── DataStore/     # Redux store and slices
+├── utiles/        # Custom hooks and constants
+├── App.jsx        # Main app component
+└── main.jsx       # Entry point
+```
+
+## Getting Started
+
+```bash
+npm install    # install dependencies
+npm run dev    # start development
+npm run build  # build for production
+npm run lint   # check code quality
+```
+
+## How it works
+
+1. Browse restaurants on the home page
+2. Search for your favorite restaurant
+3. Click on a restaurant to see its menu
+4. Add items to your cart
+5. Go to cart to review your order
+6. Remove items or clear cart as needed
